@@ -1,34 +1,19 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Logo from "../assets/logo.svg";
 import Menu from "../assets/menu.svg";
 import Close from "../assets/close.svg";
-import { animate, motion } from "framer-motion";
-import HeroRectangleOne from "../assets/images/HeroRectangleOne.png";
-import HeroRectangleTwo from "../assets/images/HeroRectangleTwo.png";
+import HeroRectangleOne from "../assets/images/HeroRectangleThree.png";
+import HeroRectangleTwo from "../assets/images/HeroRectangleFour.png";
 import "../styles/hero.css";
 import "../styles/header.css";
 import "../styles/utility.css";
 import "../styles/solution.css";
 import Button from "../components/Button";
 
-import image1 from "../assets/images/sliderImages/ipiranga.jpg";
-import image2 from "../assets/images/sliderImages/botijao.jpeg";
-import image3 from "../assets/images/sliderImages/ipimax.jpg";
+import Slider from "../components/Slider";
 
 export default function Home() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const images = [image1, image2, image3];
-
-  const carousel = useRef<HTMLDivElement | null>(null);
-  const [width, setWidth] = useState(0);
-
-  useEffect(() => {
-    if (carousel.current) {
-      const scrollWidth = carousel.current.scrollWidth;
-      const offsetWidth = carousel.current.offsetWidth;
-      setWidth(scrollWidth - offsetWidth);
-    }
-  }, []);
 
   return (
     <>
@@ -57,7 +42,7 @@ export default function Home() {
 
           <div className="desktop-only">
             <div className="flex items-center">
-              <a className="reverse-color ml-lg" href="">
+              <a className="ml-lg" href="">
                 Login
               </a>
               <Button text="Cadastre-se" />
@@ -136,25 +121,16 @@ export default function Home() {
 
       <section id="solution">
         <div className="container content">
-          <p>Nossas soluções</p>
-          <motion.div
-            ref={carousel}
-            className="carousel"
-            whileTap={{ cursor: "grabbing" }}
-          >
-            <motion.div
-              className="inner"
-              drag="x"
-              dragConstraints={{ right: 0, left: -width }}
-            >
-              {images.map((image) => (
-                <motion.div key={image} className="item">
-                  <img src={image} alt="Imagem do carousel" />
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
+        <p>Nossos produtos</p>
+        <h2>Energia que move</h2>
+        <p className="promotional-call desktop-only">
+          Você vai mais longe! No Auto Posto Grando, oferecemos o melhor para
+          você e seu veículo, brgarantindo combustíveis de alta performance e um
+          atendimento que faz a diferença. <br />Seja você também parte dessa
+          experiência.
+        </p>
         </div>
+        <Slider />
       </section>
     </>
   );

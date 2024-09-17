@@ -1,7 +1,22 @@
 #solution{
-    background: var(--light-gray);
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+    gap: 1.75rem;
     height: 90vh;
+    overflow-y: hidden;
 }
+
+#solution p{
+    color: var(--primary-color);
+    font-weight: var(--fw-bold);
+    width: 80%;
+    align-self: center;
+}
+
 
 #solution .content {
     z-index: 1;
@@ -9,42 +24,17 @@
     flex-direction: column;
     text-align: center;
     gap: 1.75rem;
-    justify-content: center;
 }
 
-#solution .content > div {
-    width: fit-content;
-    align-self: center;
-    margin-bottom: 20%;
+.promotional-call{
+    color: var(--second-text-color) !important;
+    font-weight: var(--fw-base) !important;
 }
 
-.inner{
-    display: flex;
-}
 
-.item{
-    min-width: 500px;
-    max-height: 90%;
-    padding: 20px;
-}
-
-.item img{
-    width: 100% !important;
-    height: 60%;
-    border-radius: 12px;
-    pointer-events: none;
-}
-
-.carousel{
-    z-index: 1;
-    width: 100% !important;
-    height: 30%;
-    cursor: grab;
-    overflow: hidden;
-    background: var(--bg-color);
-}
 @media (width >= 1280px) {
     #solution{
         background-color: var(--bg-color);
+        height: 950px;
     }
 }

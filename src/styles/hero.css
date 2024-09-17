@@ -1,5 +1,5 @@
 #hero {
-    background: var(--light-gray);
+    background: var(--bg-color);
     display: flex;
 }
 
@@ -26,7 +26,6 @@
 #hero .content > div {
     width: fit-content;
     align-self: center;
-    margin-bottom: 20%;
 }
 
 @media (width >= 1280px) {
@@ -50,8 +49,11 @@
         padding-left: 55%;
     }
 
+    #hero .content > div {
+        margin-bottom: 5%;
+    }
 
-    
+
     .content {
         gap: 2.5rem;
     }
