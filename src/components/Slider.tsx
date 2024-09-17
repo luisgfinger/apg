@@ -53,7 +53,7 @@ export default function Slider() {
         swipeable={true}
         selectedItem={0}
         centerMode={isLargeScreen}
-        centerSlidePercentage={isLargeScreen ? 50 : 100}
+        centerSlidePercentage={isLargeScreen ? 45 : 100}
         showIndicators={true}
       >
         {images.map((img) => (

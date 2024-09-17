@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/logo2.svg";
 import Menu from "../assets/menu.svg";
 import Close from "../assets/close.svg";
 import HeroRectangleOne from "../assets/images/HeroRectangleThree.png";
@@ -19,7 +19,9 @@ export default function Home() {
     <>
       <header className="container py-sm">
         <nav className="flex items-center justify-between">
-          <img src={Logo} alt="Logo APG" width={220} height={80} />
+          <a href="#">
+          <img id="logotype" src={Logo} alt="Logo APG" width={220} height={80} />
+          </a>
           <div className="desktop-only">
             <ul className="flex gap-1">
               <li>
@@ -123,9 +125,13 @@ export default function Home() {
         <div className="container content">
         <p>Nossos produtos</p>
         <h2>Energia que move</h2>
+        <p id="mobile-promotional" className="promotional-call">
+          Você vai mais longe!<br />No Auto Posto Grando, oferecemos<br />o melhor para
+          você e seu veículo.
+        </p>
         <p className="promotional-call desktop-only">
           Você vai mais longe! No Auto Posto Grando, oferecemos o melhor para
-          você e seu veículo, brgarantindo combustíveis de alta performance e um
+          você e seu veículo,<br />garantindo combustíveis de alta performance e um
           atendimento que faz a diferença. <br />Seja você também parte dessa
           experiência.
         </p>
