@@ -3,7 +3,7 @@
   margin: auto;
   border-radius: 10px;
   height: 380px;
-  background-color: rgb(219, 244, 219);
+  background-color: var();
   overflow-y: hidden;
 }
 
@@ -13,13 +13,14 @@
 
 @media (width >= 1280px) {
   .carousel {
-    width: 30%;
+    width: 50%;
     margin: auto;
     border-radius: 10px;
     height: 480px;
   }
 
   .carousel img{
+    width: 100px;
     height: 480px !important;
 }
 }

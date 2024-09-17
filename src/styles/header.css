@@ -24,6 +24,8 @@
     width: 100vw;
     height: 100vh;
     background: var(--bg-color);
+    scroll-behavior: unset;
+    position: fixed;
   }
   
   .mobile-menu-content ul {
