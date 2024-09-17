@@ -15,6 +15,13 @@ import Slider from "../components/Slider";
 export default function Home() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
+  useEffect(()=>{
+    if(showMobileMenu){
+      document.documentElement.style.overflowY="hidden"
+    }else{
+      document.documentElement.style.overflowY="auto"
+    }
+  });
   return (
     <>
       <header className="container py-sm">
