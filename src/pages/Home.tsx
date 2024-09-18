@@ -67,16 +67,16 @@ export default function Home() {
                       <a href="#">Home</a>
                     </li>
                     <li>
-                      <a href="#solution">Soluções</a>
+                      <a href="#solution" onClick={() => setShowMobileMenu(!showMobileMenu)}>Soluções</a>
                     </li>
                     <li>
-                      <a href="#testimonials">Depoimentos</a>
+                      <a href="#testimonials" onClick={() => setShowMobileMenu(!showMobileMenu)}>Depoimentos</a>
                     </li>
                     <li>
-                      <a href="#pricing">Preços</a>
+                      <a href="#pricing" onClick={() => setShowMobileMenu(!showMobileMenu)}>Preços</a>
                     </li>
                     <li>
-                      <a href="#contact">Contato</a>
+                      <a href="#contact" onClick={() => setShowMobileMenu(!showMobileMenu)}>Contato</a>
                     </li>
                   </ul>
                   <span
@@ -127,15 +127,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section id="solution">
         <div className="container content">
         <p>Nossos produtos</p>
         <h2>Energia que move</h2>
-        <p id="mobile-promotional" className="promotional-call">
-          Você vai mais longe!<br />No Auto Posto Grando, oferecemos o melhor<br /> para
-          você e seu veículo.
-        </p>
         <p className="promotional-call desktop-only">
           Você vai mais longe! No Auto Posto Grando, oferecemos o melhor para
           você e seu veículo,<br />garantindo combustíveis de alta performance e um

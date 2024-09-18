@@ -24,6 +24,7 @@
     flex-direction: column;
     text-align: center;
     gap: 1rem;
+    margin-top: 20%;
 }
 
 .promotional-call{
@@ -35,10 +36,10 @@
 @media (width >= 1280px) {
     #solution{
         background-color: var(--bg-color);
-        height: 950px;
+        height: 115vh;
     }
 
-    #mobile-promotional{
-        display: none;
+    #solution .content{
+        margin-top: 0%;
     }
 }
