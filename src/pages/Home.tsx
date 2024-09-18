@@ -133,7 +133,7 @@ export default function Home() {
         <p>Nossos produtos</p>
         <h2>Energia que move</h2>
         <p id="mobile-promotional" className="promotional-call">
-          Você vai mais longe!<br />No Auto Posto Grando, oferecemos<br />o melhor para
+          Você vai mais longe!<br />No Auto Posto Grando, oferecemos o melhor<br /> para
           você e seu veículo.
         </p>
         <p className="promotional-call desktop-only">
