@@ -1,24 +1,45 @@
 .carousel {
   width: 90%;
   margin: auto;
-  border-radius: 10px;
-  height: 380px;
-  background-color: rgb(219, 244, 219);
+  border-radius: 0.62rem;
+  height: 23.75rem;
+  background-color: rgb(240, 250, 240);
 }
 
 .carousel img{
-    height: 380px !important;
+    height: 23.75rem !important;
 }
+
+.carousel .legend{
+  width: 30% !important;
+  margin-left: -15% !important;
+}
+
+.carousel .legend{
+  background-color: var(--primary-color) !important;
+  color: var(--bg-color) !important;  
+}
+
+@media (width<=1280px){
+  .carousel .legend{
+    opacity: 1 !important;
+  }
+}
+
+
 
 @media (width >= 1280px) {
   .carousel {
-    width: 980px;
+    width: 61.25rem;
     margin: auto;
-    border-radius: 10px;
-    height: 480px;
+    border-radius: 0.62rem;
+    height: 30rem;
+
   }
 
   .carousel img{
-    height: 480px !important;
+    height: 30rem !important;
 }
+
+
 }
