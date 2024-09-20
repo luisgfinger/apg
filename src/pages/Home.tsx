@@ -64,7 +64,7 @@ export default function Home() {
                 <div className="container flex">
                   <ul>
                     <li>
-                      <a href="#">Home</a>
+                      <a href="#"onClick={() => setShowMobileMenu(!showMobileMenu)}>Home</a>
                     </li>
                     <li>
                       <a href="#solution" onClick={() => setShowMobileMenu(!showMobileMenu)}>Soluções</a>
