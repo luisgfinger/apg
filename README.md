@@ -66,7 +66,7 @@ Para rodar o projeto localmente:
 npm start
 ```
 
-O projeto estará disponível em `http://localhost:3000`.
+O projeto estará disponível em `https://autopostogrando.netlify.app/`.
 
 ## Estrutura do Projeto
 
