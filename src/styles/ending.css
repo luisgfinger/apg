@@ -1,0 +1,14 @@
+#ending{
+    background-color: var(--light-gray);
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+@media(width>1280px){
+    #ending{
+        width: 100%;
+        justify-content: center;
+    }
+}

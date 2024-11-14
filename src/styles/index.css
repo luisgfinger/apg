@@ -20,7 +20,6 @@
     --light-gray: #F8F8F8;
     --primary-color: #0043BC;
     --secondary-color: #F7F5FB;
-
     --ff-sans: "Montserrat", system-ui, sans-serif;
     --fw-base: 400;
     --fw-md: 500;
@@ -82,6 +81,8 @@ a {
 
 a:hover {
     color: var(--primary-color);
+    transform: scale(1.05);
+    transition: transform 0.2s ease; 
 }
 
 img {
