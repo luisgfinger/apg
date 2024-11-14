@@ -1,5 +1,5 @@
 #testimonials {
-  height: 110vh;
+  height: fit-content;
   background: #FF6900;
   display: flex;
   flex-direction: column;
