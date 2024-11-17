@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 import Logo from "../assets/logo2.svg";
 import Menu from "../assets/menu.svg";
 import Close from "../assets/close.svg";
@@ -27,6 +28,10 @@ import TestimonialCard from "../components/TestimonialCard";
 export default function Home() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
+  const [to, setTo] = useState("");
+  const [subject, setSubject] = useState("");
+  const [text, setText] = useState("");
+
   useEffect(() => {
     if (showMobileMenu) {
       document.documentElement.style.overflowY = "hidden";
@@ -34,6 +39,30 @@ export default function Home() {
       document.documentElement.style.overflowY = "auto";
     }
   });
+
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const emailData = { to, subject, text };
+
+    try {
+      const response = await axios.post(
+        "https://lambdaluis.azurewebsites.net/api/httptriggeremail",
+        emailData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log("E-mail enviado com sucesso:", response.data);
+      alert("E-mail enviado com sucesso!");
+    } catch (error) {
+      console.error("Erro ao enviar o e-mail:");
+      alert("Erro ao enviar o e-mail.");
+    }
+  };
+
   return (
     <>
       <header className="container py-sm">
@@ -342,45 +371,65 @@ export default function Home() {
             </p>
           </header>
 
-          <form className="form-contact" action="">
-            <input type="email" placeholder="Seu melhor email" />
-            <input type="text" placeholder="Motivo do contato." />
+          <form className="form-contact" onSubmit={sendEmail}>
+            <input
+              type="email"
+              placeholder="Seu melhor email"
+              value={to}
+              onChange={(e) => setTo(e.target.value)}
+              required
+            />
+            <input
+              placeholder="Motivo do contato"
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+              required
+            />
+            <input
+              placeholder="Digite sua mensagem"
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              required
+            />
             <Button text="Enviar" />
           </form>
         </div>
       </section>
       <section id="footer">
         <div className="container content">
-            <span className="social">
-              <img src={Logo}/>
-              <img src={Social}/>
+          <span className="social">
+            <img src={Logo} />
+            <img src={Social} />
+          </span>
+          <div className="footer-columns">
+            <span className="footer-column">
+              <h3>Empresa</h3>
+              <a href="">Sobre nós</a>
+              <a href="">Faça parte do time</a>
+              <a href="">Blog</a>
             </span>
-            <div className="footer-columns">
-              <span className="footer-column">
-                <h3>Empresa</h3>
-                <a href="">Sobre nós</a>
-                <a href="">Faça parte do time</a>
-                <a href="">Blog</a>
-              </span>
-              <span className="footer-column">
-                <h3>Funcionalidades</h3>
-                <a href="">Marketing</a>
-                <a href="">Análise de dados</a>
-                <a href="">Boot Discord</a>
-              </span>
-              <span className="footer-column">
-                <h3>Recursos</h3>
-                <a href="">IOS & Android</a>
-                <a href="">Teste a Demo</a>
-                <a href="">Clientes</a>
-                <a href="">API</a>
-              </span>
-            </div>
+            <span className="footer-column">
+              <h3>Funcionalidades</h3>
+              <a href="">Marketing</a>
+              <a href="">Análise de dados</a>
+              <a href="">Boot Discord</a>
+            </span>
+            <span className="footer-column">
+              <h3>Recursos</h3>
+              <a href="">IOS & Android</a>
+              <a href="">Teste a Demo</a>
+              <a href="">Clientes</a>
+              <a href="">API</a>
+            </span>
+          </div>
         </div>
       </section>
       <section id="ending">
-      <div className="ending-message">
-            <p>Feito com amor na aula de Programação Web ©2024 Luis Gustavo - Todos os direitos reservados.</p>
+        <div className="ending-message">
+          <p>
+            Feito com amor na aula de Programação Web ©2024 Luis Gustavo - Todos
+            os direitos reservados.
+          </p>
         </div>
       </section>
     </>

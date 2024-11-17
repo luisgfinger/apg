@@ -35,8 +35,7 @@
             width: 80%;
             min-height: 3.5rem;
             border-radius: 6px;
-            padding-left: 0.8rem;
-            
+            padding-left: 0.8rem;      
         }
 
         >input:focus{
