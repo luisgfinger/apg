@@ -28,8 +28,7 @@ import TestimonialCard from "../components/TestimonialCard";
 export default function Home() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
-  const [to, setTo] = useState("");
-  const [subject, setSubject] = useState("");
+  const [userEmail, setUserEmail] = useState("");
   const [text, setText] = useState("");
 
   useEffect(() => {
@@ -42,8 +41,7 @@ export default function Home() {
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    const emailData = { to, subject, text };
+    const emailData = { userEmail, text };
 
     try {
       const response = await axios.post(
@@ -55,11 +53,11 @@ export default function Home() {
           },
         }
       );
-      console.log("E-mail enviado com sucesso:", response.data);
       alert("E-mail enviado com sucesso!");
+      setUserEmail("");
+      setText(""); 
     } catch (error) {
-      console.error("Erro ao enviar o e-mail:");
-      alert("Erro ao enviar o e-mail.");
+      alert("Erro ao enviar o e-mail. Tente novamente.");
     }
   };
 
@@ -375,17 +373,11 @@ export default function Home() {
             <input
               type="email"
               placeholder="Seu melhor email"
-              value={to}
-              onChange={(e) => setTo(e.target.value)}
+              value={userEmail}
+              onChange={(e) => setUserEmail(e.target.value)}
               required
             />
-            <input
-              placeholder="Motivo do contato"
-              value={subject}
-              onChange={(e) => setSubject(e.target.value)}
-              required
-            />
-            <input
+            <textarea
               placeholder="Digite sua mensagem"
               value={text}
               onChange={(e) => setText(e.target.value)}
