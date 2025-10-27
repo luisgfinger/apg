@@ -2,6 +2,8 @@
 
 Este projeto é uma implementação de um componente de carousel responsivo utilizando `React` e `react-responsive-carousel`, com suporte para scroll suave entre seções da página e comportamento adaptativo em telas grandes e pequenas.
 
+O projeto está disponível em `https://autopostogrando.netlify.app/`.
+
 ## Índice
 
 - [Visão Geral](#visão-geral)
@@ -66,7 +68,7 @@ Para rodar o projeto localmente:
 npm start
 ```
 
-O projeto estará disponível em `https://autopostogrando.netlify.app/`.
+O projeto está disponível em `https://autopostogrando.netlify.app/`.
 
 ## Estrutura do Projeto
 
